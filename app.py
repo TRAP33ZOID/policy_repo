@@ -13,10 +13,10 @@ load_dotenv()
 
 app = Flask(__name__)
 
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'Waleed@1999'
-app.config['MYSQL_DB'] = 'policy'
-app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'waleed@policy'
+app.config['MYSQL_PASSWORD'] = 'Trap3zoid'
+app.config['MYSQL_DB'] = 'policy_azure'
+app.config['MYSQL_HOST'] = 'policy.mysql.database.azure.com'
 
 mysql = MySQL()
 mysql.init_app(app)
