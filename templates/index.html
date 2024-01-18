@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>PD</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Policy Dash</h1>
+        <form id="uploadForm" enctype="multipart/form-data">
+            <div class="drop-zone">
+                <div class="drop-zone-icon">
+                    <!-- You can use an <img> tag if you have an icon file or an inline SVG. Here's an example using Font Awesome icons -->
+                    <i class="fas fa-file-upload"></i> <!-- Replace with your icon -->
+                </div>
+                <h2>Drop PDF here</h2>
+                <p>Or click to select files</p>
+                <input type="file" id="file-input" name="file" accept=".txt" multiple hidden>
+                <button type="button" onclick="document.getElementById('file-input').click()">Browse my Computer</button>
+            </div>
+            <input type="button" value="Upload File" id="uploadButton">
+        </form>
+        <div id="loading" class="loader" style="display: none;"></div>
+        <button id="loadChart">Visualize Data</button>
+        <div id="chart"></div>
+
+        <script>
+            document.getElementById('loadChart').addEventListener('click', function() {
+            window.location.href = '/get_sunburst';
+            });
+        </script>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+
+    <script src="{{ url_for('static', filename='scripts/scripts.js') }}"></script>
+</body>
+</html>

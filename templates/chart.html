@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sunburst Chart</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div id="chart" style="width:100%;height:100vh;"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('/get_sunburst_data')
+                .then(response => response.json())
+                .then(data => {
+                    var graphJSON = data.graphJSON;
+                    Plotly.newPlot('chart', JSON.parse(graphJSON));
+                });
+        });
+    </script>
+</body>
+</html>
