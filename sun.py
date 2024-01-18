@@ -5,10 +5,10 @@ from plotly.subplots import make_subplots
 def create_sunburst():
     # Database connection configuration
     db_config = {
-        'user': 'root',
-        'password': 'Waleed@1999',
-        'host': 'localhost',
-        'database': 'policy'
+        'user': 'waleed@policy',
+        'password': 'Trap3zoid',
+        'host': 'policy.mysql.database.azure.com',
+        'database': 'policy_azure'
     }
 
     # Establish a connection to the MySQL database
